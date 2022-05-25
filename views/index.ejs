@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/dceedc8de0.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Budget your life man</h1>
+    <h3> </h3>
+    <div id="budget">
+        <form action="/createBudget" method="POST">
+                <input type="text" name="budgetName" placeholder="Budget Name"> </input>
+                <input type="number" name="totalBudget" id="number" placeholder="Total Budget Amount" />
+                <input type="number" placeholder="Amount Spent?" name="moneySpent" id="spent">
+                <input placeholder="Remaining Budget" name="remainingBalance" type="number" disabled>
+            <button class="add"type="submit"> <i class="fa-solid fa-square-plus fa-2xl"></i></button>
+        </form>
+    <div>
+        <% for(let i=0; i< messages.length; i++){ %>
+            <div class="new">
+                    <div class="title">
+                       <%=messages[i].budgetName %>
+                    </div>
+                    <div class="amount">
+                       $<%=messages[i].totalBudget %>
+                    </div>
+                    <div class="totalSpent">
+                        $<%=messages[i].moneySpent %>
+                    </div>
+                    <div class="total">
+                        $<%=messages[i].remainingBalance %>
+                    </div>
+                <div class="butts">
+                    <button class="check">
+                        check balance
+                    </button>
+                    <button class="deleteOne">
+                        <i class="fas fa-trash fa-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <% } %>
+    </div>
+</div>
+    <script src="main.js"></script>
+</body>
+
+</html>
